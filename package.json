@@ -1,5 +1,5 @@
 {
-  "name": "Edu360",
+  "name": "edu360",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -20,5 +20,17 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "main": "index.android.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FearAndSwords/Edu360.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FearAndSwords/Edu360/issues"
+  },
+  "homepage": "https://github.com/FearAndSwords/Edu360#readme",
+  "description": ""
 }
