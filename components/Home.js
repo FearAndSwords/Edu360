@@ -102,8 +102,6 @@ const styles = StyleSheet.create(
         shadowOpacity: 0.5,
         elevation: 2,
         position: 'relative',
-        marginLeft: 5,
-        marginRight: 5,
         marginTop: 10
     },
     textStyle:

@@ -105,6 +105,7 @@ const styles = StyleSheet.create(
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 1,
+                width: 360,
                 backgroundColor: '#000000',
             }
     });

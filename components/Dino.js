@@ -174,6 +174,7 @@ const styles = StyleSheet.create(
         image:
             {
                 borderColor: '#1c8247',
+                width: 360,
                 borderWidth: 3,
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
