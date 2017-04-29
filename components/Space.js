@@ -23,7 +23,7 @@ class Space extends Component
     {
         return (
             <View style={styles.container}>
-                <Image source={require('./space_btn.png')}/>
+                <Image style={styles.image} source={require('./space_btn.png')}/>
 
                 <WebView
                     source={{html: "<html><body><iframe width='350' height='250' src='https://www.youtube.com/embed/gmXW3AdI3XA' frameborder='0'></iframe></body></html>"}}
@@ -32,7 +32,7 @@ class Space extends Component
                     style={styles.video}
                 />
 
-                <TouchableHighlight onPress={() => Linking.openURL('https://www.youtube.com/embed/gmXW3AdI3XA')}>
+                <TouchableHighlight style={styles.button} onPress={() => Linking.openURL('https://www.youtube.com/embed/gmXW3AdI3XA')}>
                     <Text style={styles.textStyle}> Open 360 View </Text>
                 </TouchableHighlight>
 
@@ -57,30 +57,28 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#F5FCFF',
+                backgroundColor: '#9b59b6',
             },
         button:
             {
-                backgroundColor: 'grey',
-                borderColor: '#1f5130',
+                backgroundColor: '#8e44ad',
+                borderColor: '#6c3384',
                 borderWidth: 1,
                 alignItems: 'center',
-                height: 55,
-                paddingTop: 10,
-                paddingBottom: 10,
+                height: 50,
+                width: 350,
                 shadowColor: '#000',
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 0.5,
                 elevation: 2,
-                position: 'relative',
-                marginLeft: 5,
-                marginRight: 5,
-                marginTop: 10
+                marginBottom: 10,
+                marginRight: 10,
+                marginLeft: 10
             },
         textStyle:
             {
                 fontSize: 25,
-                color: 'black'
+                color: 'black',
             },
         optionsStyle:
             {
@@ -91,12 +89,23 @@ const styles = StyleSheet.create(
             },
         video:
             {
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: 360,
-                height: 250,
-                margin: 55
+                width: 365,
+                backgroundColor: '#9b59b6',
+                margin: 10,
+                shadowColor: '#000',
+                shadowOffset: {width: 1, height: 5},
+                shadowOpacity: 0.5,
+                elevation: 3,
+                marginTop: 15
+            },
+        image:
+            {
+                borderColor: '#6c3384',
+                borderWidth: 3,
+                shadowColor: '#000000',
+                shadowOffset: {width: 0, height: 3},
+                shadowOpacity: 1,
+                backgroundColor: '#000000',
             }
     });
 

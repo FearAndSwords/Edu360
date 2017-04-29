@@ -104,10 +104,11 @@ class Login extends Component
                     <View style={styles.logoContainer}>
                         <Image
                         style={styles.logo}
-                        source={require('./logo.jpg')}
+                        source={require('./edu360Logo.png')}
+                        resizeMode="cover"
                         />
 
-                        <Text style={styles.title}>An educational app for viewing 360 degree videos</Text>
+                        {/*<Text style={styles.title}>An Educational App with 360 Videos</Text>*/}
                     </View>
                     <View style={styles.formContainer}>
                         <KeyboardAvoidingView behaviour="padding" style={styles.container2}>
@@ -170,14 +171,17 @@ const styles = StyleSheet.create(
     },
     logo:
     {
-        width: 100,
-        height: 100
+        alignSelf: 'center',
+        height: 150,
+        width: 320,
+        borderWidth: 1,
+        borderRadius: 15
     },
     title:
     {
         color: 'white',
         marginTop: 10,
-        width: 160,
+        width: 320,
         textAlign: 'center',
         opacity: 0.9
     },

@@ -30,7 +30,7 @@ class Dino extends Component
     {
         return (
             <View style={styles.container}>
-                <Image source={require('./dinosaur_btn.png')}/>
+                <Image style={styles.image} source={require('./dinosaur_btn.png')}/>
 
                  {/*<Vr*/}
                  {/*src=*/}
@@ -61,6 +61,7 @@ class Dino extends Component
                  {/*/>*/}
                 
                 {/*This one!*/}
+
                  <WebView
                     source={{html: "<html><body><iframe width='350' height='250' src='https://www.youtube.com/embed/ERh7PwCxJQY' frameborder='0'></iframe></body></html>"}}
                     javaScriptEnabled={true}
@@ -69,6 +70,7 @@ class Dino extends Component
                     //userAgent={"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36"}
                     style={styles.video}
                 />
+
 
                 {/*<YouTube*/}
                     {/*ref="youtubePlayer"*/}
@@ -88,7 +90,7 @@ class Dino extends Component
                 {/*/>*/}
 
 
-                <TouchableHighlight onPress={() => Linking.openURL('https://www.youtube.com/embed/ERh7PwCxJQY')
+                <TouchableHighlight style={styles.button} onPress={() => Linking.openURL('https://www.youtube.com/embed/ERh7PwCxJQY')
                     // AppLink.maybeOpenURL('https://www.youtube.com/embed/ehkWm-dl8r4', { appName:'YouTube', appStoreId:'id544007664', playStoreId:'com.google.android.youtube'}).then(() => {
                     //
                     // })
@@ -128,30 +130,28 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#F5FCFF',
+                backgroundColor: '#2ecc71',
             },
         button:
             {
-                backgroundColor: 'grey',
+                backgroundColor: '#27ae60',
                 borderColor: '#1f5130',
                 borderWidth: 1,
                 alignItems: 'center',
-                height: 55,
-                paddingTop: 10,
-                paddingBottom: 10,
+                height: 50,
+                width: 350,
                 shadowColor: '#000',
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 0.5,
                 elevation: 2,
-                position: 'relative',
-                marginLeft: 5,
-                marginRight: 5,
-                marginTop: 10
+                marginBottom: 10,
+                marginRight: 10,
+                marginLeft: 10
             },
         textStyle:
             {
                 fontSize: 25,
-                color: 'black'
+                color: 'black',
             },
         optionsStyle:
             {
@@ -162,13 +162,24 @@ const styles = StyleSheet.create(
             },
         video:
             {
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: 360,
-                height: 250,
-                margin: 55
-             }
+                width: 365,
+                backgroundColor: '#2ecc71',
+                margin: 10,
+                shadowColor: '#000',
+                shadowOffset: {width: 1, height: 5},
+                shadowOpacity: 0.5,
+                elevation: 3,
+                marginTop: 15
+             },
+        image:
+            {
+                borderColor: '#1c8247',
+                borderWidth: 3,
+                shadowColor: '#000000',
+                shadowOffset: {width: 0, height: 3},
+                shadowOpacity: 1,
+                backgroundColor: '#000000',
+            }
     });
 
 export default Dino;

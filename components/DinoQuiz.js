@@ -95,15 +95,15 @@ class DinoQuiz extends Component
                 <Header headerText = {'True or False?'}/>
 
                 <View style={styles.question}>
-                    <Text style={styles.textStyle}> {this.state.questionText} </Text>
+                    <Text style={styles.questionText}> {this.state.questionText} </Text>
                 </View>
 
                 <View style={styles.optionsStyle}>
-                    <TouchableHighlight style={styles.button} onPress = {this.updateTrue}>
+                    <TouchableHighlight style={styles.optButton} onPress = {this.updateTrue}>
                         <Text style={styles.textStyle}> True </Text>
                     </TouchableHighlight>
 
-                    <TouchableHighlight style={styles.button} onPress = {this.updateFalse}>
+                    <TouchableHighlight style={styles.optButton} onPress = {this.updateFalse}>
                         <Text style={styles.textStyle}> False </Text>
                     </TouchableHighlight>
                 </View>
@@ -127,24 +127,43 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#F5FCFF',
+                backgroundColor: '#2ecc71',
             },
         button:
             {
-                backgroundColor: 'grey',
+                backgroundColor: '#27ae60',
                 borderColor: '#1f5130',
                 borderWidth: 1,
                 alignItems: 'center',
-                height: 55,
-                paddingTop: 10,
-                paddingBottom: 10,
+                height: 50,
+                width: 350,
                 shadowColor: '#000',
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 0.5,
                 elevation: 2,
+                marginBottom: 5,
+                paddingTop: 10,
+                paddingBottom: 10,
                 position: 'relative',
+                marginTop: 10
+            },
+        optButton:
+            {
+                backgroundColor: '#27ae60',
+                borderColor: '#1f5130',
+                borderWidth: 1,
+                alignItems: 'center',
+                height: 50,
+                width: 170,
+                shadowColor: '#000',
+                shadowOffset: {width: 0, height: 3},
+                shadowOpacity: 0.5,
+                elevation: 2,
                 marginLeft: 5,
                 marginRight: 5,
+                paddingTop: 10,
+                paddingBottom: 10,
+                position: 'relative',
                 marginTop: 10
             },
         textStyle:
@@ -153,6 +172,14 @@ const styles = StyleSheet.create(
                 color: 'black',
                 textAlign: 'center',
 
+            },
+        questionText:
+            {
+                fontSize: 25,
+                color: '#000000',
+                textAlign: 'center',
+                fontFamily: 'monospace',
+                fontWeight: 'bold'
             },
         optionsStyle:
             {
@@ -167,14 +194,17 @@ const styles = StyleSheet.create(
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                backgroundColor: '#8cc1db',
-                width: 360,
+                backgroundColor: '#95a5a6',
+                width: 350,
                 padding: 10,
-                margin: 10
-            },
-        hidden:
-            {
-                opacity: 0
+                margin: 10,
+                marginTop: 25,
+                borderWidth: 1,
+                borderColor: '#6b7677',
+                shadowColor: '#000',
+                shadowOffset: {width: 0, height: 3},
+                shadowOpacity: 0.5,
+                elevation: 2,
             }
     });
 

@@ -20,10 +20,11 @@ const styles =
     },
     viewStyle:
     {
-        backgroundColor: '#3daf41',
+        backgroundColor: '#95a5a6',
         justifyContent: 'center',
         alignItems: 'center',
         height: 60,
+        width: 360,
         paddingTop: 10,
         paddingBottom: 10,
         shadowColor: '#000',

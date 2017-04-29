@@ -26,27 +26,27 @@ class Home extends Component
                     <Header headerText = {'Home Page'}/>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('dinoPage')}>
-                        <Image source={require('./dinosaur_btn.png')}/>
+                        <Image style={styles.image} source={require('./dinosaur_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('spacePage')}>
-                        <Image source={require('./space_btn.png')}/>
+                        <Image style={styles.image} source={require('./space_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('oceanPage')}>
-                        <Image source={require('./ocean_btn.png')}/>
+                        <Image style={styles.image} source={require('./ocean_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('bodyPage')}>
-                        <Image source={require('./human_btn.png')}/>
+                        <Image style={styles.image} source={require('./human_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('volcanoPage')}>
-                        <Image source={require('./volcano_btn.png')}/>
+                        <Image style={styles.image} source={require('./volcano_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('antarcticaPage')}>
-                        <Image source={require('./antartica_btn.png')}/>
+                        <Image style={styles.image} source={require('./antartica_btn.png')}/>
                     </TouchableHighlight>
                 </ScrollView>
 
@@ -63,7 +63,7 @@ const styles = StyleSheet.create(
     container:
     {
         flex: 1,
-        backgroundColor: '#F5FCFF'
+        backgroundColor: '#e67e22'
     },
     button:
     {
@@ -72,14 +72,14 @@ const styles = StyleSheet.create(
         justifyContent: 'center',
         width: 350,
         padding: 10,
-        backgroundColor: 'grey',
-        borderColor: '#1f5130',
-        borderWidth: 1,
+        backgroundColor: '#000000',
+        borderColor: '#000000',
+        borderWidth: 5,
         alignItems: 'center',
         height: 90,
         paddingTop: 10,
         paddingBottom: 10,
-        shadowColor: '#000',
+        shadowColor: '#d35400',
         shadowOffset: {width: 0, height: 3},
         shadowOpacity: 0.5,
         elevation: 2,
@@ -90,8 +90,8 @@ const styles = StyleSheet.create(
     },
     optButton:
     {
-        backgroundColor: '#63a579',
-        borderColor: '#1f5130',
+        backgroundColor: '#a34000',
+        borderColor: '#d35400',
         borderWidth: 1,
         alignItems: 'center',
         height: 65,
@@ -111,6 +111,14 @@ const styles = StyleSheet.create(
         fontSize: 30,
         color: 'black'
     },
+    image:
+    {
+        borderColor: '#a34000',
+        borderWidth: 3,
+        shadowColor: '#000000',
+        shadowOffset: {width: 0, height: 3},
+        shadowOpacity: 1,
+    }
 });
 
 export default Home;
