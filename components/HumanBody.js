@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, WebView, Linking, Image} from 'react-native';
-import Header from './Header';
 
 class HumanBody extends Component
 {

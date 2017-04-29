@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import Header from './Header';
 
 class Settings extends Component

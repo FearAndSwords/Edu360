@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Image, Text, TouchableOpacity, AppRegistry, KeyboardAvoidingView, TextInput } from 'react-native';
-//import LoginForm from './LoginForm';
+import { StyleSheet, View, Image, Text, TouchableOpacity, KeyboardAvoidingView, TextInput } from 'react-native';
+
 import firebase from 'firebase';
 import Spinner from './Spinner';
 import Splash from './Splash';

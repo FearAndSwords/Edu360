@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, TouchableHighlight, WebView, Image, Linking} from 'react-native';
-import Vr from 'react-native-vr';
-import Header from './Header';
-import AppLink from 'react-native-app-link';
+import { StyleSheet, Text, View, TouchableHighlight, WebView, Image, Linking } from 'react-native';
 
 class Dino extends Component
 {

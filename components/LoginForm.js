@@ -1,7 +1,7 @@
 //no need for this component anymore!!
 
 import React, { Component } from 'react';
-import { StyleSheet, View, TextInput, TouchableOpacity, Text, KeyboardAvoidingView} from 'react-native';
+import { StyleSheet, TextInput, KeyboardAvoidingView } from 'react-native';
 
 
 class LoginForm extends Component
