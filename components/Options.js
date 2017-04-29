@@ -32,12 +32,12 @@ class Options extends Component
                     <Text style={styles.textStyle}> Settings </Text>
                 </TouchableHighlight>
 
-                <TouchableHighlight style={styles.button} onPress={() => this.props.navigator.pop()}>
-                    <Text style={styles.textStyle}> Home </Text>
-                </TouchableHighlight>
-
                 <TouchableHighlight style={styles.button}>
                     <Text style={styles.textStyle}> Log Out </Text>
+                </TouchableHighlight>
+
+                <TouchableHighlight style={styles.button} onPress={() => this.props.navigator.pop()}>
+                    <Text style={styles.textStyle}> Home </Text>
                 </TouchableHighlight>
             </View>
         );
@@ -51,25 +51,21 @@ const styles = StyleSheet.create(
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#34495e'
     },
     button:
     {
-        backgroundColor: 'grey',
-        borderColor: '#1f5130',
+        backgroundColor: '#2c3e50',
+        borderColor: '#1a2530',
         borderWidth: 1,
         alignItems: 'center',
-        height: 55,
-        paddingTop: 10,
-        paddingBottom: 10,
+        height: 90,
+        width: 350,
         shadowColor: '#000',
         shadowOffset: {width: 0, height: 3},
         shadowOpacity: 0.5,
         elevation: 2,
-        position: 'relative',
-        marginLeft: 5,
-        marginRight: 5,
-        marginTop: 10
+        marginTop: 30
     },
     textStyle:
     {

@@ -10,6 +10,10 @@ class Settings extends Component
             <View style={styles.container}>
                 <Header headerText = {'Settings Page'}/>
 
+                <TouchableHighlight style={styles.button}>
+                    <Text style={styles.textStyle}> Edit Profile </Text>
+                </TouchableHighlight>
+
                 <TouchableHighlight style={styles.button} onPress={() => this.props.navigator.pop()}>
                     <Text style={styles.textStyle}> Back </Text>
                 </TouchableHighlight>
@@ -25,24 +29,26 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#F5FCFF',
+                backgroundColor: '#3498db'
             },
         button:
             {
-                backgroundColor: 'grey',
-                borderColor: '#1f5130',
+                backgroundColor: '#2980b9',
+                borderColor: '#1d5a82',
                 borderWidth: 1,
                 alignItems: 'center',
-                height: 55,
-                paddingTop: 10,
-                paddingBottom: 10,
+                height: 50,
+                width: 350,
                 shadowColor: '#000',
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 0.5,
                 elevation: 2,
+                marginBottom: 10,
+                marginRight: 10,
+                marginLeft: 10,
+                paddingTop: 10,
+                paddingBottom: 10,
                 position: 'relative',
-                marginLeft: 5,
-                marginRight: 5,
                 marginTop: 10
             },
         textStyle:
