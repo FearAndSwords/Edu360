@@ -3,6 +3,7 @@ import { StyleSheet, View, Image, Text, TouchableOpacity, AppRegistry, KeyboardA
 //import LoginForm from './LoginForm';
 import firebase from 'firebase';
 import Spinner from './Spinner';
+import Splash from './Splash';
 
 class Login extends Component
 {
@@ -98,56 +99,58 @@ class Login extends Component
     render()
     {
         return (
-            <View style={styles.container}>
-                <View style={styles.logoContainer}>
-                    <Image 
-                    style={styles.logo}
-                    source={require('./logo.jpg')}
-                    />
-
-                    <Text style={styles.title}>An educational app for viewing 360 degree videos</Text>
-                </View>
-                <View style={styles.formContainer}>
-                    <KeyboardAvoidingView behaviour="padding" style={styles.container2}>
-                        <TextInput 
-                            onChangeText={email => this.setState({ email })}
-                            value={ this.state.email }
-                            label='Email'
-                            placeholder="username or email"
-                            placeholderTextColor="rgba(255,255,255,0.5)"
-                            returnKeyType="next"
-                            style={styles.input}
-                            underlineColorAndroid='rgba(0,0,0,0)'
-                            autoCorrect={false}
-                            onSubmitEditing={() => this.passwordInput.focus()} 
-                            keyboardType="email-address"      
-                            autoCapitalize='none'
+            <Splash>
+                <View style={styles.container}>
+                    <View style={styles.logoContainer}>
+                        <Image
+                        style={styles.logo}
+                        source={require('./logo.jpg')}
                         />
-                        
-                        <TextInput 
-                            //ref='2'
-                            placeholder="password"
-                            value={ this.state.password }
-                            onChangeText={ password => this.setState({ password})}
-                            label='password'
-                            placeholderTextColor="rgba(255,255,255,0.5)"
-                            returnKeyType="go"
-                            secureTextEntry
-                            style={styles.input}
-                            ref={(input) => this.passwordInput = input}
-                        />
-                    </KeyboardAvoidingView>
 
-                    <Text style={styles.errorTextStyle}>
-                        {this.state.error}
-                    </Text>
+                        <Text style={styles.title}>An educational app for viewing 360 degree videos</Text>
+                    </View>
+                    <View style={styles.formContainer}>
+                        <KeyboardAvoidingView behaviour="padding" style={styles.container2}>
+                            <TextInput
+                                onChangeText={email => this.setState({ email })}
+                                value={ this.state.email }
+                                label='Email'
+                                placeholder="username or email"
+                                placeholderTextColor="rgba(255,255,255,0.5)"
+                                returnKeyType="next"
+                                style={styles.input}
+                                underlineColorAndroid='rgba(0,0,0,0)'
+                                autoCorrect={false}
+                                onSubmitEditing={() => this.passwordInput.focus()}
+                                keyboardType="email-address"
+                                autoCapitalize='none'
+                            />
 
-                    <TouchableOpacity style={styles.buttonContainer}>
-                        {this.renderButton()}
-                    </TouchableOpacity>
+                            <TextInput
+                                //ref='2'
+                                placeholder="password"
+                                value={ this.state.password }
+                                onChangeText={ password => this.setState({ password})}
+                                label='password'
+                                placeholderTextColor="rgba(255,255,255,0.5)"
+                                returnKeyType="go"
+                                secureTextEntry
+                                style={styles.input}
+                                ref={(input) => this.passwordInput = input}
+                            />
+                        </KeyboardAvoidingView>
+
+                        <Text style={styles.errorTextStyle}>
+                            {this.state.error}
+                        </Text>
+
+                        <TouchableOpacity style={styles.buttonContainer}>
+                            {this.renderButton()}
+                        </TouchableOpacity>
+                    </View>
+
                 </View>
-
-            </View>
+            </Splash>
         );
     }
 }

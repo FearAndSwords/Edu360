@@ -2,27 +2,116 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 import Header from './Header';
 
+var questionNumber = 1;
+var spaceQuizScore = 0;
+
 class SpaceQuiz extends Component
 {
+    constructor()
+    {
+        super();
+        this.state =
+            {
+                questionText: 'Over one million Earths could fit inside the Sun',
+                nextBtnTxt: 'Next Question'
+            }
+    }
+
+    updateTrue = () =>
+    {
+        if(questionNumber == 1)
+        {
+            this.setState({questionText: 'CORRECT!'});
+            spaceQuizScore++;
+        }
+        if(questionNumber == 2)
+        {
+            this.setState({questionText: 'WRONG: Jupiter is the biggest planet in our solar system'})
+        }
+        if(questionNumber == 3)
+        {
+            this.setState({questionText: 'WRONG: The universe is approximately 13.8 billion years old'})
+        }
+        if(questionNumber == 4)
+        {
+            this.setState({questionText: 'CORRECT!'})
+            spaceQuizScore++;
+        }
+    }
+
+    updateFalse = () =>
+    {
+        if(questionNumber == 1)
+        {
+            this.setState({questionText: 'WRONG: Over one million Earths could fit inside the Sun'})
+            //return{background: #9adb8c #db8c8c
+        }
+        if(questionNumber == 2)
+        {
+            this.setState({questionText: 'CORRECT!'})
+            spaceQuizScore++;
+        }
+        if(questionNumber == 3)
+        {
+            this.setState({questionText: 'CORRECT!'})
+            spaceQuizScore++;
+        }
+        if(questionNumber == 4)
+        {
+            this.setState({questionText: 'WRONG: The first person to set foot on the Moon was Neil Armstrong'})
+        }
+    }
+
+    updateQuestion = () =>
+    {
+        questionNumber++;
+        if(questionNumber == 2) {this.setState({questionText: 'Mars is the biggest planet in our solar system'})}
+        if(questionNumber == 3) {this.setState({questionText: 'The universe is approximately 1 billion years old'})}
+        if(questionNumber == 4) {this.setState({questionText: 'The first person to set foot on the Moon was Neil Armstrong'})}
+        if(questionNumber == 5)
+        {
+            this.setState({questionText: 'Your Score: '+(spaceQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
+        }
+        if(questionNumber > 5)
+        {
+            questionNumber = 1;
+            spaceQuizScore = 0;
+            this.setState({questionText: 'Over one million Earths could fit inside the Sun', nextBtnTxt: 'Next Question'});
+        }
+    }
+
+    resetVariables = () =>
+    {
+        questionNumber = 1;
+        spaceQuizScore = 0;
+        this.props.navigator.pop();
+    }
+
     render()
     {
         return (
             <View style={styles.container}>
                 <Header headerText = {'True or False?'}/>
 
-                <Text style={styles.textStyle}> Question Goes Here! </Text>
+                <View style={styles.question}>
+                    <Text style={styles.textStyle}> {this.state.questionText} </Text>
+                </View>
 
                 <View style={styles.optionsStyle}>
-                    <TouchableHighlight style={styles.button}>
+                    <TouchableHighlight style={styles.button} onPress = {this.updateTrue}>
                         <Text style={styles.textStyle}> True </Text>
                     </TouchableHighlight>
 
-                    <TouchableHighlight style={styles.button}>
+                    <TouchableHighlight style={styles.button} onPress = {this.updateFalse}>
                         <Text style={styles.textStyle}> False </Text>
                     </TouchableHighlight>
                 </View>
 
-                <TouchableHighlight style={styles.button} onPress={() => this.props.navigator.pop()}>
+                <TouchableHighlight style={styles.button} onPress = {this.updateQuestion}>
+                    <Text style={styles.textStyle}> {this.state.nextBtnTxt} </Text>
+                </TouchableHighlight>
+
+                <TouchableHighlight style={styles.button} onPress={this.resetVariables}>
                     <Text style={styles.textStyle}> Back </Text>
                 </TouchableHighlight>
             </View>
@@ -60,7 +149,9 @@ const styles = StyleSheet.create(
         textStyle:
             {
                 fontSize: 25,
-                color: 'black'
+                color: 'black',
+                textAlign: 'center',
+
             },
         optionsStyle:
             {
@@ -68,6 +159,21 @@ const styles = StyleSheet.create(
                 justifyContent: 'flex-start',
                 flexDirection: 'row',
                 position: 'relative'
+            },
+        question:
+            {
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#8cc1db',
+                width: 360,
+                padding: 10,
+                margin: 10
+            },
+        hidden:
+            {
+                opacity: 0
             }
     });
 

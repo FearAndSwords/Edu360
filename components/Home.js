@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, TouchableHighlight, ScrollView} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, TouchableHighlight, ScrollView, Image} from 'react-native';
 import Header from './Header';
 
 class Home extends Component
@@ -26,15 +26,27 @@ class Home extends Component
                     <Header headerText = {'Home Page'}/>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('dinoPage')}>
-                        <Text style={styles.textStyle}>Dinosaur</Text>
+                        <Image source={require('./dinosaur_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('spacePage')}>
-                        <Text style={styles.textStyle}>Space</Text>
+                        <Image source={require('./space_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('oceanPage')}>
-                        <Text style={styles.textStyle}>Ocean</Text>
+                        <Image source={require('./ocean_btn.png')}/>
+                    </TouchableHighlight>
+
+                    <TouchableHighlight style={styles.button} onPress={() => this.navigate('bodyPage')}>
+                        <Image source={require('./human_btn.png')}/>
+                    </TouchableHighlight>
+
+                    <TouchableHighlight style={styles.button} onPress={() => this.navigate('volcanoPage')}>
+                        <Image source={require('./volcano_btn.png')}/>
+                    </TouchableHighlight>
+
+                    <TouchableHighlight style={styles.button} onPress={() => this.navigate('antarcticaPage')}>
+                        <Image source={require('./antartica_btn.png')}/>
                     </TouchableHighlight>
                 </ScrollView>
 
@@ -55,11 +67,16 @@ const styles = StyleSheet.create(
     },
     button:
     {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        width: 350,
+        padding: 10,
         backgroundColor: 'grey',
         borderColor: '#1f5130',
         borderWidth: 1,
         alignItems: 'center',
-        height: 55,
+        height: 90,
         paddingTop: 10,
         paddingBottom: 10,
         shadowColor: '#000',
@@ -77,7 +94,7 @@ const styles = StyleSheet.create(
         borderColor: '#1f5130',
         borderWidth: 1,
         alignItems: 'center',
-        height: 55,
+        height: 65,
         paddingTop: 10,
         paddingBottom: 10,
         shadowColor: '#000',
@@ -91,7 +108,7 @@ const styles = StyleSheet.create(
     },
     textStyle:
     {
-        fontSize: 25,
+        fontSize: 30,
         color: 'black'
     },
 });

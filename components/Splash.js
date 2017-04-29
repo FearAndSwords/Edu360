@@ -4,33 +4,45 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, AppRegistry } from 'react-native';
 
 //export out Splash screen and render the XSL to to the screen
+// Splash component adapted from https://www.youtube.com/watch?v=Euh4ax9XR9c&feature=youtu.be&t=4383
 class Splash extends Component
 {
-    constructor()
+    constructor(props)
     {
-        super();
-        this.navigate = this.navigate.bind(this)
+        super(props);
+        this.state = {done: false}
     }
 
-    navigate(name)
+    timer()
     {
-        this.props.navigator.push(
-        {
-            name
-        });
+        setTimeout(()=>{
+            this.setState({
+                done: true
+            });
+        }, 1000);
+    }
+
+    componentDidMount()
+    {
+        this.timer();
     }
 
     render()
     {
         return (
-            <View style={styles.wrapper}>
-                <View style={styles.titleWrapper}>
-                    <Text style={styles.title} onPress={() => this.navigate('loginPage')}>Edu 360</Text>
-                </View>                
-                <View>
-                    <Text style={styles.subtitle}>Powered by AwesomeTeam</Text>
-                </View>                
-            </View>
+            this.state.done ?
+                ({...this.props.children})
+                :
+                (
+                    <View style={styles.wrapper}>
+                        <View style={styles.titleWrapper}>
+                            <Text style={styles.title} onPress={() => this.navigate('loginPage')}>Edu 360</Text>
+                        </View>
+                        <View>
+                            <Text style={styles.subtitle}>Powered by AwesomeTeam</Text>
+                        </View>
+                    </View>
+                )
         );
     }
 }

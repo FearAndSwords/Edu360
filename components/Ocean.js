@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, TouchableHighlight } from 'react-native';
-import Vr from 'react-native-vr';
+import { StyleSheet, Text, View, TouchableHighlight, WebView, Linking, Image} from 'react-native';
 import Header from './Header';
 
 class Ocean extends Component
@@ -8,11 +7,6 @@ class Ocean extends Component
     constructor (props)
     {
         super(props);
-        this.state = {
-            paused: false,
-            displayMode: Vr.constants.DISPLAY_MODE.EMBEDDED
-        };
-
         super();
         this.navigate = this.navigate.bind(this)
     }
@@ -29,32 +23,18 @@ class Ocean extends Component
     {
         return (
             <View style={styles.container}>
-                <Header headerText = {'Ocean'}/>
+                <Image source={require('./ocean_btn.png')}/>
 
-                <Vr
-                    src=
-                        {{
-                            uri: 'https://vjs.zencdn.net/v/oceans.mp4',
-                            type: Vr.constants.TYPE.MONO,
-                            format: Vr.constants.FORMAT.DEFAULT
-                        }}
-                    paused={this.state.paused}
-                    displayMode={this.state.displayMode}
-                    style=
-                        {{
-                            height: 250,
-                            width: 300
-                        }} />
+                <WebView
+                    source={{html: "<html><body><iframe width='350' height='250' src='https://www.youtube.com/embed/dLf4CpL7nX8' frameborder='0'></iframe></body></html>"}}
+                    javaScriptEnabled={true}
+                    domStorageEnabled={true}
+                    style={styles.video}
+                />
 
-                <View style={styles.optionsStyle}>
-                    <TouchableHighlight style={styles.button} onPress={() => this.setState({ paused: !this.state.paused })}>
-                        <Text style={styles.textStyle}>    Pause    </Text>
-                    </TouchableHighlight>
-
-                    <TouchableHighlight style={styles.button} onPress={() => this.setState({ displayMode: Vr.constants.DISPLAY_MODE.FULLSCREEN_MONO })}>
-                        <Text style={styles.textStyle}> Fullscreen </Text>
-                    </TouchableHighlight>
-                </View>
+                <TouchableHighlight onPress={() => Linking.openURL('https://www.youtube.com/embed/dLf4CpL7nX8')}>
+                    <Text style={styles.textStyle}> Open 360 View </Text>
+                </TouchableHighlight>
 
                 <View style={styles.containerStyle}>
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('oceanQuizPage')}>
@@ -62,7 +42,6 @@ class Ocean extends Component
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop()}}>
-                        {/*<TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop(); this.setState({ paused: !this.state.paused })}}>*/}
                         <Text style={styles.textStyle}> Home </Text>
                     </TouchableHighlight>
                 </View>
@@ -109,6 +88,15 @@ const styles = StyleSheet.create(
                 justifyContent: 'flex-start',
                 flexDirection: 'row',
                 position: 'relative'
+            },
+        video:
+            {
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: 360,
+                height: 250,
+                margin: 55
             }
     });
 
