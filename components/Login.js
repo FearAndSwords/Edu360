@@ -78,7 +78,7 @@ class Login extends Component
 
         return (
             <Text 
-            style={styles.buttonText} 
+            style={styles.buttonText}
             onPress={() => this.onButtonPress()}
             //onPress={() => this.navigate('homePage')}
             >
@@ -161,7 +161,7 @@ const styles = StyleSheet.create(
     container:
     {
         flex: 1,
-        backgroundColor: '#3498db'
+        backgroundColor: '#008100'
     },
     logoContainer:
     {
@@ -187,7 +187,7 @@ const styles = StyleSheet.create(
     },
     buttonContainer:
     {
-        backgroundColor: '#3498FF',
+        backgroundColor: '#006b00',
         paddingVertical: 15
     },
     container2:
