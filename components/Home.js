@@ -23,6 +23,12 @@ class Home extends Component
         return (
             <View style={styles.container}>
                 <ScrollView>
+                    {/*<TouchableHighlight style={{}}>*/}
+                        {/*<Text>Touchable</Text>*/}
+                    {/*</TouchableHighlight>*/}
+
+                    {/*<Text>Test</Text>*/}
+
                     <Header headerText = {'Home Page'}/>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('dinoPage')}>

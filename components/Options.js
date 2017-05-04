@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import Header from './Header';
+import firebase from 'firebase';
 
 class Options extends Component
 {
@@ -18,6 +19,12 @@ class Options extends Component
             });
     }
 
+    logOut = () =>
+    {
+        firebase.auth().signOut();
+        this.props.navigator.push({ name: 'loginPage'});
+    }
+
     render()
     {
         return (
@@ -32,7 +39,8 @@ class Options extends Component
                     <Text style={styles.textStyle}> Settings </Text>
                 </TouchableHighlight>
 
-                <TouchableHighlight style={styles.button}>
+                <TouchableHighlight style={styles.button}
+                                    onPress={() => this.logOut()}>
                     <Text style={styles.textStyle}> Log Out </Text>
                 </TouchableHighlight>
 

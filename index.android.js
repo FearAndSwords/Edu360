@@ -26,11 +26,8 @@ export default class Edu360 extends Component
         this.renderScene = this.renderScene.bind(this);
     }
 
-    renderScene(route, navigator) {
-        // if(route.name === 'splashPage')
-        // {
-        //     return <Splash navigator={navigator}/>
-        // }
+    renderScene(route, navigator)
+    {
         if (route.name === 'loginPage') {
             return <Login navigator={navigator}/>
         }
@@ -86,7 +83,7 @@ export default class Edu360 extends Component
     render()
     {
         return (
-            <Navigator initialRoute={{name: 'homePage'}} // Need to check for login -> if logged in go to homePage instead
+            <Navigator initialRoute={{name: 'loginPage'}} // Need to check for login -> if logged in go to homePage instead
                        renderScene={this.renderScene}
             />
         );
