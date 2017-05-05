@@ -29,7 +29,7 @@ class Home extends Component
 
                     {/*<Text>Test</Text>*/}
 
-                    <Header headerText = {'Home Page'}/>
+                    <Image style={styles.header} source={require('./home_page.png')}/>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('dinoPage')}>
                         <Image style={styles.image} source={require('./dinosaur_btn.png')}/>
@@ -57,7 +57,7 @@ class Home extends Component
                 </ScrollView>
 
                 <TouchableHighlight style={styles.optButton} onPress={() => this.navigate('optionsPage')}>
-                    <Text style={styles.textStyle}>Options</Text>
+                    <Image style={styles.optButtonImg} source={require('./options.png')} resizeMode="stretch"/>
                 </TouchableHighlight>
             </View>
         );
@@ -69,7 +69,8 @@ const styles = StyleSheet.create(
     container:
     {
         flex: 1,
-        backgroundColor: '#e67e22'
+        // backgroundColor: '#e67e22'
+        backgroundColor: '#006b00'
     },
     button:
     {
@@ -95,20 +96,27 @@ const styles = StyleSheet.create(
         marginTop: 10
     },
     optButton:
+        {
+            justifyContent: 'center',
+            width: 360,
+            backgroundColor: '#00ff00',
+            borderColor: '#00ff00',
+            borderWidth: 5,
+            alignItems: 'center',
+            height: 70,
+            position: 'relative',
+        },
+    optButtonImg:
     {
-        backgroundColor: '#a34000',
-        borderColor: '#d35400',
+        width: 360,
+        height: 60,
         borderWidth: 1,
         alignItems: 'center',
-        height: 65,
         paddingTop: 10,
         paddingBottom: 10,
-        shadowColor: '#000',
-        shadowOffset: {width: 0, height: 3},
-        shadowOpacity: 0.5,
-        elevation: 2,
         position: 'relative',
-        marginTop: 10
+        marginTop: 10,
+        marginBottom: 10
     },
     textStyle:
     {
@@ -117,12 +125,21 @@ const styles = StyleSheet.create(
     },
     image:
     {
-        borderColor: '#a34000',
+        borderColor: '#00ff00',
         borderWidth: 3,
         shadowColor: '#000000',
         shadowOffset: {width: 0, height: 3},
         shadowOpacity: 1,
-    }
+    },
+    header:
+        {
+            width: 360,
+            // borderColor: '#a34000',
+            // borderWidth: 3,
+            shadowColor: '#000000',
+            shadowOffset: {width: 0, height: 3},
+            shadowOpacity: 1,
+        }
 });
 
 export default Home;

@@ -92,7 +92,7 @@ class Dino extends Component
                     //
                     // })
                 }>
-                    <Text style={styles.textStyle}> Open 360 View </Text>
+                    <Image style={styles.image} source={require('./open360.png')}/>
                 </TouchableHighlight>
 
                 {/*<View style={styles.optionsStyle}>*/}
@@ -107,12 +107,12 @@ class Dino extends Component
 
                 <View style={styles.containerStyle}>
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('dinoQuizPage')}>
-                        <Text style={styles.textStyle}> Take Quiz </Text>
+                        <Image style={styles.image} source={require('./take_quiz.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop()}}>
                         {/*<TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop(); this.setState({ paused: !this.state.paused })}}>*/}
-                        <Text style={styles.textStyle}> Home </Text>
+                        <Image style={styles.image} source={require('./back.png')}/>
                     </TouchableHighlight>
                 </View>
             </View>
@@ -131,9 +131,6 @@ const styles = StyleSheet.create(
             },
         button:
             {
-                backgroundColor: '#27ae60',
-                borderColor: '#1f5130',
-                borderWidth: 1,
                 alignItems: 'center',
                 height: 50,
                 width: 350,
@@ -171,7 +168,7 @@ const styles = StyleSheet.create(
         image:
             {
                 borderColor: '#1c8247',
-                width: 360,
+                width: 350,
                 borderWidth: 3,
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},

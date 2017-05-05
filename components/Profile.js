@@ -8,7 +8,7 @@ class Profile extends Component
     {
         return (
             <View style={styles.container}>
-                <Header headerText = {'Profile Page'}/>
+                <Image style={{width: 360}} source={require('./profile_page.png')}/>
 
                 <Image
                     style={styles.image}
@@ -39,7 +39,7 @@ class Profile extends Component
                 </View>
 
                 <TouchableHighlight style={styles.button} onPress={() => this.props.navigator.pop()}>
-                    <Text style={styles.textStyle}> Back </Text>
+                    <Image style={styles.backButtonImage} source={require('./back.png')}/>
                 </TouchableHighlight>
             </View>
         );
@@ -57,9 +57,6 @@ const styles = StyleSheet.create(
             },
         button:
             {
-                backgroundColor: '#8e44ad',
-                borderColor: '#6c3384',
-                borderWidth: 1,
                 alignItems: 'center',
                 height: 50,
                 width: 350,
@@ -96,6 +93,16 @@ const styles = StyleSheet.create(
                 justifyContent: 'flex-start',
                 flexDirection: 'row',
                 position: 'relative'
+            },
+        backButtonImage:
+            {
+                borderColor: '#6c3384',
+                width: 350,
+                borderWidth: 3,
+                shadowColor: '#000000',
+                shadowOffset: {width: 0, height: 3},
+                shadowOpacity: 1,
+                backgroundColor: '#000000',
             }
     });
 

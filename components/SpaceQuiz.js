@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 import Header from './Header';
 
 var questionNumber = 1;
@@ -91,7 +91,7 @@ class SpaceQuiz extends Component
     {
         return (
             <View style={styles.container}>
-                <Header headerText = {'True or False?'}/>
+                <Image style={{width: 360}} source={require('./true_false.png')}/>
 
                 <View style={styles.question}>
                     <Text style={styles.questionText}> {this.state.questionText} </Text>
@@ -99,20 +99,20 @@ class SpaceQuiz extends Component
 
                 <View style={styles.optionsStyle}>
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateTrue}>
-                        <Text style={styles.textStyle}> True </Text>
+                        <Image style={styles.image} source={require('./true.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateFalse}>
-                        <Text style={styles.textStyle}> False </Text>
+                        <Image style={styles.image} source={require('./false.png')}/>
                     </TouchableHighlight>
                 </View>
 
-                <TouchableHighlight style={styles.button} onPress = {this.updateQuestion}>
+                <TouchableHighlight style={styles.nextButton} onPress = {this.updateQuestion}>
                     <Text style={styles.textStyle}> {this.state.nextBtnTxt} </Text>
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button} onPress={this.resetVariables}>
-                    <Text style={styles.textStyle}> Back </Text>
+                    <Image style={styles.image} source={require('./back.png')}/>
                 </TouchableHighlight>
             </View>
         );
@@ -130,9 +130,6 @@ const styles = StyleSheet.create(
             },
         button:
             {
-                backgroundColor: '#8e44ad',
-                borderColor: '#6c3384',
-                borderWidth: 1,
                 alignItems: 'center',
                 height: 50,
                 width: 350,
@@ -140,24 +137,31 @@ const styles = StyleSheet.create(
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 0.5,
                 elevation: 2,
-                marginBottom: 5,
-                paddingTop: 10,
-                paddingBottom: 10,
-                position: 'relative',
-                marginTop: 10
+                marginBottom: 10,
+                marginRight: 10,
+                marginLeft: 10
             },
-        optButton:
+        nextButton:
             {
-                backgroundColor: '#8e44ad',
+                backgroundColor: '#00ff00',
                 borderColor: '#6c3384',
-                borderWidth: 1,
+                borderWidth: 3,
                 alignItems: 'center',
                 height: 50,
-                width: 170,
+                width: 350,
                 shadowColor: '#000',
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 0.5,
                 elevation: 2,
+                marginBottom: 10,
+                marginRight: 10,
+                marginLeft: 10
+            },
+        optButton:
+            {
+                alignItems: 'center',
+                height: 70,
+                width: 170,
                 marginLeft: 5,
                 marginRight: 5,
                 paddingTop: 10,
@@ -170,7 +174,7 @@ const styles = StyleSheet.create(
                 fontSize: 25,
                 color: 'black',
                 textAlign: 'center',
-
+                fontWeight: 'bold',
             },
         questionText:
             {
@@ -204,6 +208,15 @@ const styles = StyleSheet.create(
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 0.5,
                 elevation: 2,
+            },
+        image:
+            {
+                borderColor: '#6c3384',
+                borderWidth: 3,
+                shadowColor: '#000000',
+                shadowOffset: {width: 0, height: 3},
+                shadowOpacity: 1,
+                backgroundColor: '#000000',
             }
     });
 

@@ -32,16 +32,16 @@ class Antarctica extends Component
                 />
 
                 <TouchableHighlight style={styles.button} onPress={() => Linking.openURL('https://www.youtube.com/embed/GBJDiFJZf-A')}>
-                    <Text style={styles.textStyle}> Open 360 View </Text>
+                    <Image style={styles.image} source={require('./open360.png')}/>
                 </TouchableHighlight>
 
                 <View style={styles.containerStyle}>
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('antarcticaQuizPage')}>
-                        <Text style={styles.textStyle}> Take Quiz </Text>
+                        <Image style={styles.image} source={require('./take_quiz.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop()}}>
-                        <Text style={styles.textStyle}> Home </Text>
+                        <Image style={styles.image} source={require('./back.png')}/>
                     </TouchableHighlight>
                 </View>
             </View>
@@ -60,9 +60,6 @@ const styles = StyleSheet.create(
             },
         button:
             {
-                backgroundColor: '#1abc9c',
-                borderColor: '#107561',
-                borderWidth: 1,
                 alignItems: 'center',
                 height: 50,
                 width: 350,
@@ -104,7 +101,7 @@ const styles = StyleSheet.create(
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
                 shadowOpacity: 1,
-                width: 360,
+                width: 350,
                 backgroundColor: '#000000',
             }
     });

@@ -83,7 +83,7 @@ export default class Edu360 extends Component
     render()
     {
         return (
-            <Navigator initialRoute={{name: 'loginPage'}} // Need to check for login -> if logged in go to homePage instead
+            <Navigator initialRoute={{name: 'homePage'}} // Need to check for login -> if logged in go to homePage instead
                        renderScene={this.renderScene}
             />
         );

@@ -149,7 +149,6 @@ class Login extends Component
                             {this.renderButton()}
                         </TouchableOpacity>
                     </View>
-
                 </View>
             </Splash>
         );
