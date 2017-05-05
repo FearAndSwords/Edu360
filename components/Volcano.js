@@ -22,7 +22,7 @@ class Volcano extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={styles.image} source={require('./volcano_btn.png')}/>
+                <Image style={{width: 360}} source={require('./vol1.png')}/>
 
                 <WebView
                     source={{html: "<html><body><iframe width='350' height='250' src='https://www.youtube.com/embed/_X6caE4v0fk' frameborder='0'></iframe></body></html>"}}

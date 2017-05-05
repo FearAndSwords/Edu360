@@ -48,11 +48,11 @@ class Home extends Component
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('volcanoPage')}>
-                        <Image style={styles.image} source={require('./volcano_btn.png')}/>
+                        <Image style={styles.image} source={require('./vol1.png')} resizeMode="stretch"/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('antarcticaPage')}>
-                        <Image style={styles.image} source={require('./antartica_btn.png')}/>
+                        <Image style={styles.image} source={require('./ant1.png')} resizeMode="stretch"/>
                     </TouchableHighlight>
                 </ScrollView>
 
@@ -126,6 +126,8 @@ const styles = StyleSheet.create(
     image:
     {
         borderColor: '#00ff00',
+        width: 350,
+        height: 90,
         borderWidth: 3,
         shadowColor: '#000000',
         shadowOffset: {width: 0, height: 3},

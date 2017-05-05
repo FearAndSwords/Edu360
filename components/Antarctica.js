@@ -22,7 +22,7 @@ class Antarctica extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={styles.image} source={require('./antartica_btn.png')}/>
+                <Image style={{width: 360}} source={require('./ant1.png')}/>
 
                 <WebView
                     source={{html: "<html><body><iframe width='350' height='250' src='https://www.youtube.com/embed/GBJDiFJZf-A' frameborder='0'></iframe></body></html>"}}
