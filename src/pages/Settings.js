@@ -7,14 +7,14 @@ class Settings extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('./settings_page.png')}/>
+                <Image style={{width: 360}} source={require('../components/settings_page.png')}/>
 
                 <TouchableHighlight style={styles.button}>
                     <Text style={styles.textStyle}> Edit Profile </Text>
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.backButton} onPress={() => this.props.navigator.pop()}>
-                    <Image style={styles.backButtonImage} source={require('./back.png')}/>
+                    <Image style={styles.backButtonImage} source={require('../components/back.png')}/>
                 </TouchableHighlight>
             </View>
         );

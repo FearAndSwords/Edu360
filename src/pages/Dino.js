@@ -27,7 +27,7 @@ class Dino extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={styles.image} source={require('./dinosaur_btn.png')}/>
+                <Image style={styles.image} source={require('../components/dinosaur_btn.png')}/>
 
                  {/*<Vr*/}
                  {/*src=*/}
@@ -92,7 +92,7 @@ class Dino extends Component
                     //
                     // })
                 }>
-                    <Image style={styles.image} source={require('./open360.png')}/>
+                    <Image style={styles.image} source={require('../components/open360.png')}/>
                 </TouchableHighlight>
 
                 {/*<View style={styles.optionsStyle}>*/}
@@ -107,12 +107,12 @@ class Dino extends Component
 
                 <View style={styles.containerStyle}>
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('dinoQuizPage')}>
-                        <Image style={styles.image} source={require('./take_quiz.png')}/>
+                        <Image style={styles.image} source={require('../components/take_quiz.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop()}}>
                         {/*<TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop(); this.setState({ paused: !this.state.paused })}}>*/}
-                        <Image style={styles.image} source={require('./back.png')}/>
+                        <Image style={styles.image} source={require('../components/back.png')}/>
                     </TouchableHighlight>
                 </View>
             </View>

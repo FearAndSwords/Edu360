@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, Navigator } from 'react-native';
 import Home from './components/Home';
 import Dino from './components/Dino';
-import Space from './components/Space'
+import Space from './src/pages/Space'
 import Options from './components/Options';
 import Login from './components/Login';
 import Ocean from './components/Ocean'
@@ -12,7 +12,7 @@ import DinoQuiz from "./components/DinoQuiz";
 import SpaceQuiz from "./components/SpaceQuiz";
 import OceanQuiz from "./components/OceanQuiz";
 import HumanBody from "./components/HumanBody";
-import Volcano from "./components/Volcano";
+import Volcano from "./src/pages/Volcano";
 import Antarctica from "./components/Antarctica";
 import HumanBodyQuiz from "./components/HumanBodyQuiz";
 import VolcanoQuiz from "./components/VolcanoQuiz";

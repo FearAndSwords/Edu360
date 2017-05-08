@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 
 var questionNumber = 1;
-var dinoQuizScore = 0;
+var spaceQuizScore = 0;
 
-class VolcanoQuiz extends Component
+class SpaceQuiz extends Component
 {
     constructor()
     {
         super();
         this.state =
             {
-                questionText: 'Magma and lava are made of the same thing',
+                questionText: 'Over one million Earths could fit inside the Sun',
                 nextBtnTxt: 'Next Question'
             }
     }
@@ -21,20 +21,20 @@ class VolcanoQuiz extends Component
         if(questionNumber == 1)
         {
             this.setState({questionText: 'CORRECT!'});
-            dinoQuizScore++;
+            spaceQuizScore++;
         }
         if(questionNumber == 2)
         {
-            this.setState({questionText: 'WRONG: The largest volcano in the Solar System is Olympus Mons on Mars'})
+            this.setState({questionText: 'WRONG: Jupiter is the biggest planet in our solar system'})
         }
         if(questionNumber == 3)
         {
-            this.setState({questionText: 'WRONG: Volcanoes are also found on the ocean floor and even under icecaps'})
+            this.setState({questionText: 'WRONG: The universe is approximately 13.8 billion years old'})
         }
         if(questionNumber == 4)
         {
             this.setState({questionText: 'CORRECT!'})
-            dinoQuizScore++;
+            spaceQuizScore++;
         }
     }
 
@@ -42,47 +42,47 @@ class VolcanoQuiz extends Component
     {
         if(questionNumber == 1)
         {
-            this.setState({questionText: 'WRONG: Both lava and magma are made from molten rock. It is called magma when it is underground and lava above ground'})
+            this.setState({questionText: 'WRONG: Over one million Earths could fit inside the Sun'})
             //return{background: #9adb8c #db8c8c
         }
         if(questionNumber == 2)
         {
             this.setState({questionText: 'CORRECT!'})
-            dinoQuizScore++;
+            spaceQuizScore++;
         }
         if(questionNumber == 3)
         {
             this.setState({questionText: 'CORRECT!'})
-            dinoQuizScore++;
+            spaceQuizScore++;
         }
         if(questionNumber == 4)
         {
-            this.setState({questionText: 'WRONG: Pumice is a volcanic rock that can float in water'})
+            this.setState({questionText: 'WRONG: The first person to set foot on the Moon was Neil Armstrong'})
         }
     }
 
     updateQuestion = () =>
     {
         questionNumber++;
-        if(questionNumber == 2) {this.setState({questionText: 'The largest volcano in the Solar System is found on Earth'})}
-        if(questionNumber == 3) {this.setState({questionText: 'Volcanoes are only found above ground'})}
-        if(questionNumber == 4) {this.setState({questionText: 'Pumice is a volcanic rock that can float in water'})}
+        if(questionNumber == 2) {this.setState({questionText: 'Mars is the biggest planet in our solar system'})}
+        if(questionNumber == 3) {this.setState({questionText: 'The universe is approximately 1 billion years old'})}
+        if(questionNumber == 4) {this.setState({questionText: 'The first person to set foot on the Moon was Neil Armstrong'})}
         if(questionNumber == 5)
         {
-            this.setState({questionText: 'Your Score: '+(dinoQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
+            this.setState({questionText: 'Your Score: '+(spaceQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
         }
         if(questionNumber > 5)
         {
             questionNumber = 1;
-            dinoQuizScore = 0;
-            this.setState({questionText: 'Magma and lava are made of the same thing', nextBtnTxt: 'Next Question'});
+            spaceQuizScore = 0;
+            this.setState({questionText: 'Over one million Earths could fit inside the Sun', nextBtnTxt: 'Next Question'});
         }
     }
 
     resetVariables = () =>
     {
         questionNumber = 1;
-        dinoQuizScore = 0;
+        spaceQuizScore = 0;
         this.props.navigator.pop();
     }
 
@@ -90,7 +90,7 @@ class VolcanoQuiz extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('./true_false.png')}/>
+                <Image style={{width: 360}} source={require('../components/true_false.png')}/>
 
                 <View style={styles.question}>
                     <Text style={styles.questionText}> {this.state.questionText} </Text>
@@ -98,11 +98,11 @@ class VolcanoQuiz extends Component
 
                 <View style={styles.optionsStyle}>
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateTrue}>
-                        <Image style={styles.image} source={require('./true.png')}/>
+                        <Image style={styles.image} source={require('../components/true.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateFalse}>
-                        <Image style={styles.image} source={require('./false.png')}/>
+                        <Image style={styles.image} source={require('../components/false.png')}/>
                     </TouchableHighlight>
                 </View>
 
@@ -111,7 +111,7 @@ class VolcanoQuiz extends Component
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button} onPress={this.resetVariables}>
-                    <Image style={styles.image} source={require('./back.png')}/>
+                    <Image style={styles.image} source={require('../components/back.png')}/>
                 </TouchableHighlight>
             </View>
         );
@@ -125,7 +125,7 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#e74c3c',
+                backgroundColor: '#9b59b6',
             },
         button:
             {
@@ -143,7 +143,7 @@ const styles = StyleSheet.create(
         nextButton:
             {
                 backgroundColor: '#00ff00',
-                borderColor: '#962a1f',
+                borderColor: '#6c3384',
                 borderWidth: 3,
                 alignItems: 'center',
                 height: 50,
@@ -210,7 +210,7 @@ const styles = StyleSheet.create(
             },
         image:
             {
-                borderColor: '#962a1f',
+                borderColor: '#6c3384',
                 borderWidth: 3,
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
@@ -219,4 +219,4 @@ const styles = StyleSheet.create(
             }
     });
 
-export default VolcanoQuiz;
+export default SpaceQuiz;

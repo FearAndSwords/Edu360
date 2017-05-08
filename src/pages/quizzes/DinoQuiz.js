@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 
 var questionNumber = 1;
-var spaceQuizScore = 0;
+var dinoQuizScore = 0;
 
-class SpaceQuiz extends Component
+class DinoQuiz extends Component
 {
     constructor()
     {
         super();
         this.state =
             {
-                questionText: 'Over one million Earths could fit inside the Sun',
-                nextBtnTxt: 'Next Question'
+                questionText: 'Dinosaurs ruled the earth for over 160 million years',
+                nextBtnTxt: 'Next Question',
+                bgColor: '#db8c8c'
             }
     }
 
@@ -21,20 +22,20 @@ class SpaceQuiz extends Component
         if(questionNumber == 1)
         {
             this.setState({questionText: 'CORRECT!'});
-            spaceQuizScore++;
+            dinoQuizScore++;
         }
         if(questionNumber == 2)
         {
-            this.setState({questionText: 'WRONG: Jupiter is the biggest planet in our solar system'})
+            this.setState({questionText: 'WRONG: Modern-day birds descend from a type of dinosaurs known as theropods'})
         }
         if(questionNumber == 3)
         {
-            this.setState({questionText: 'WRONG: The universe is approximately 13.8 billion years old'})
+            this.setState({questionText: 'WRONG: Dinosaurs lived on Earth until around 65 million years ago when a mass extinction occurred'})
         }
         if(questionNumber == 4)
         {
             this.setState({questionText: 'CORRECT!'})
-            spaceQuizScore++;
+            dinoQuizScore++;
         }
     }
 
@@ -42,47 +43,47 @@ class SpaceQuiz extends Component
     {
         if(questionNumber == 1)
         {
-            this.setState({questionText: 'WRONG: Over one million Earths could fit inside the Sun'})
+            this.setState({questionText: 'WRONG: Dinosaurs ruled the earth for over 160 million years'})
             //return{background: #9adb8c #db8c8c
         }
         if(questionNumber == 2)
         {
             this.setState({questionText: 'CORRECT!'})
-            spaceQuizScore++;
+            dinoQuizScore++;
         }
         if(questionNumber == 3)
         {
             this.setState({questionText: 'CORRECT!'})
-            spaceQuizScore++;
+            dinoQuizScore++;
         }
         if(questionNumber == 4)
         {
-            this.setState({questionText: 'WRONG: The first person to set foot on the Moon was Neil Armstrong'})
+            this.setState({questionText: 'WRONG: There are currently over 330 described dinosaur species and this number is growing'})
         }
     }
 
     updateQuestion = () =>
     {
         questionNumber++;
-        if(questionNumber == 2) {this.setState({questionText: 'Mars is the biggest planet in our solar system'})}
-        if(questionNumber == 3) {this.setState({questionText: 'The universe is approximately 1 billion years old'})}
-        if(questionNumber == 4) {this.setState({questionText: 'The first person to set foot on the Moon was Neil Armstrong'})}
+        if(questionNumber == 2) {this.setState({questionText: 'Modern-day wolves descend from a type of dinosaurs known as theropods'})}
+        if(questionNumber == 3) {this.setState({questionText: 'Dinosaurs lived on Earth until around 1 million years ago when a mass extinction occurred'})}
+        if(questionNumber == 4) {this.setState({questionText: 'There are currently over 330 described dinosaur species and this number is growing'})}
         if(questionNumber == 5)
         {
-            this.setState({questionText: 'Your Score: '+(spaceQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
+            this.setState({questionText: 'Your Score: '+(dinoQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
         }
         if(questionNumber > 5)
         {
             questionNumber = 1;
-            spaceQuizScore = 0;
-            this.setState({questionText: 'Over one million Earths could fit inside the Sun', nextBtnTxt: 'Next Question'});
+            dinoQuizScore = 0;
+            this.setState({questionText: 'Dinosaurs ruled the earth for over 160 million years', nextBtnTxt: 'Next Question'});
         }
     }
 
     resetVariables = () =>
     {
         questionNumber = 1;
-        spaceQuizScore = 0;
+        dinoQuizScore = 0;
         this.props.navigator.pop();
     }
 
@@ -90,7 +91,7 @@ class SpaceQuiz extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('./true_false.png')}/>
+                <Image style={{width: 360}} source={require('../components/true_false.png')}/>
 
                 <View style={styles.question}>
                     <Text style={styles.questionText}> {this.state.questionText} </Text>
@@ -98,11 +99,11 @@ class SpaceQuiz extends Component
 
                 <View style={styles.optionsStyle}>
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateTrue}>
-                        <Image style={styles.image} source={require('./true.png')}/>
+                        <Image style={styles.image} source={require('../components/true.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateFalse}>
-                        <Image style={styles.image} source={require('./false.png')}/>
+                        <Image style={styles.image} source={require('../components/false.png')}/>
                     </TouchableHighlight>
                 </View>
 
@@ -111,7 +112,7 @@ class SpaceQuiz extends Component
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button} onPress={this.resetVariables}>
-                    <Image style={styles.image} source={require('./back.png')}/>
+                    <Image style={styles.image} source={require('../components/back.png')}/>
                 </TouchableHighlight>
             </View>
         );
@@ -125,7 +126,7 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#9b59b6',
+                backgroundColor: '#2ecc71',
             },
         button:
             {
@@ -141,21 +142,21 @@ const styles = StyleSheet.create(
                 marginLeft: 10
             },
         nextButton:
-            {
-                backgroundColor: '#00ff00',
-                borderColor: '#6c3384',
-                borderWidth: 3,
-                alignItems: 'center',
-                height: 50,
-                width: 350,
-                shadowColor: '#000',
-                shadowOffset: {width: 0, height: 3},
-                shadowOpacity: 0.5,
-                elevation: 2,
-                marginBottom: 10,
-                marginRight: 10,
-                marginLeft: 10
-            },
+        {
+            backgroundColor: '#00ff00',
+            borderColor: '#1c8247',
+            borderWidth: 3,
+            alignItems: 'center',
+            height: 50,
+            width: 350,
+            shadowColor: '#000',
+            shadowOffset: {width: 0, height: 3},
+            shadowOpacity: 0.5,
+            elevation: 2,
+            marginBottom: 10,
+            marginRight: 10,
+            marginLeft: 10
+        },
         optButton:
             {
                 alignItems: 'center',
@@ -210,7 +211,7 @@ const styles = StyleSheet.create(
             },
         image:
             {
-                borderColor: '#6c3384',
+                borderColor: '#1c8247',
                 borderWidth: 3,
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
@@ -219,4 +220,4 @@ const styles = StyleSheet.create(
             }
     });
 
-export default SpaceQuiz;
+export default DinoQuiz;

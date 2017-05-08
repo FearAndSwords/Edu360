@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, WebView, Linking, Image } from 'react-native';
+import {StyleSheet, Text, View, TouchableHighlight, WebView, Linking, Image} from 'react-native';
 
-class Antarctica extends Component
+class Volcano extends Component
 {
     constructor (props)
     {
@@ -22,26 +22,26 @@ class Antarctica extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('./ant1.png')}/>
+                <Image style={{width: 360}} source={require('../../components/vol1.png')}/>
 
                 <WebView
-                    source={{html: "<html><body><iframe width='350' height='250' src='https://www.youtube.com/embed/GBJDiFJZf-A' frameborder='0'></iframe></body></html>"}}
+                    source={{html: "<html><body><iframe width='350' height='250' src='https://www.youtube.com/embed/_X6caE4v0fk' frameborder='0'></iframe></body></html>"}}
                     javaScriptEnabled={true}
                     domStorageEnabled={true}
                     style={styles.video}
                 />
 
-                <TouchableHighlight style={styles.button} onPress={() => Linking.openURL('https://www.youtube.com/embed/GBJDiFJZf-A')}>
-                    <Image style={styles.image} source={require('./open360.png')}/>
+                <TouchableHighlight style={styles.button} onPress={() => Linking.openURL('https://www.youtube.com/embed/_X6caE4v0fk')}>
+                    <Image style={styles.image} source={require('../../components/open360.png')}/>
                 </TouchableHighlight>
 
                 <View style={styles.containerStyle}>
-                    <TouchableHighlight style={styles.button} onPress={() => this.navigate('antarcticaQuizPage')}>
-                        <Image style={styles.image} source={require('./take_quiz.png')}/>
+                    <TouchableHighlight style={styles.button} onPress={() => this.navigate('volcanoQuizPage')}>
+                        <Image style={styles.image} source={require('../../components/take_quiz.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop()}}>
-                        <Image style={styles.image} source={require('./back.png')}/>
+                        <Image style={styles.image} source={require('../../components/back.png')}/>
                     </TouchableHighlight>
                 </View>
             </View>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#1abc9c',
+                backgroundColor: '#e74c3c',
             },
         button:
             {
@@ -86,7 +86,7 @@ const styles = StyleSheet.create(
         video:
             {
                 width: 365,
-                backgroundColor: '#1abc9c',
+                backgroundColor: '#e74c3c',
                 margin: 10,
                 shadowColor: '#000',
                 shadowOffset: {width: 1, height: 5},
@@ -96,7 +96,7 @@ const styles = StyleSheet.create(
             },
         image:
             {
-                borderColor: '#107561',
+                borderColor: '#962a1f',
                 borderWidth: 3,
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
@@ -106,4 +106,4 @@ const styles = StyleSheet.create(
             }
     });
 
-export default Antarctica;
+export default Volcano;
