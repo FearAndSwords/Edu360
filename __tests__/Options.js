@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import Options from '../components/Options';
+import Options from '../components/pages/Options';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';

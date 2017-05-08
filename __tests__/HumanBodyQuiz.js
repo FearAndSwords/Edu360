@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import HumanBodyQuiz from '../components/HumanBodyQuiz';
+import HumanBodyQuiz from '../components/pages/quizzes/HumanBodyQuiz';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';

@@ -37,7 +37,7 @@ class DinoQuiz extends Component
             this.setState({questionText: 'CORRECT!'})
             dinoQuizScore++;
         }
-    }
+    };
 
     updateFalse = () =>
     {
@@ -91,7 +91,7 @@ class DinoQuiz extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('../components/true_false.png')}/>
+                <Image style={{width: 360}} source={require('../../true_false.png')}/>
 
                 <View style={styles.question}>
                     <Text style={styles.questionText}> {this.state.questionText} </Text>
@@ -99,11 +99,11 @@ class DinoQuiz extends Component
 
                 <View style={styles.optionsStyle}>
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateTrue}>
-                        <Image style={styles.image} source={require('../components/true.png')}/>
+                        <Image style={styles.image} source={require('../../true.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateFalse}>
-                        <Image style={styles.image} source={require('../components/false.png')}/>
+                        <Image style={styles.image} source={require('../../false.png')}/>
                     </TouchableHighlight>
                 </View>
 
@@ -112,7 +112,7 @@ class DinoQuiz extends Component
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button} onPress={this.resetVariables}>
-                    <Image style={styles.image} source={require('../components/back.png')}/>
+                    <Image style={styles.image} source={require('../../back.png')}/>
                 </TouchableHighlight>
             </View>
         );
@@ -171,7 +171,7 @@ const styles = StyleSheet.create(
             },
         textStyle:
             {
-                fontSize: 25,
+                fontSize: 30,
                 color: 'black',
                 textAlign: 'center',
                 fontWeight: 'bold',

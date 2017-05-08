@@ -22,7 +22,7 @@ class Volcano extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('../../components/vol1.png')}/>
+                <Image style={{width: 360}} source={require('../vol1.png')}/>
 
                 <WebView
                     source={{html: "<html><body><iframe width='350' height='250' src='https://www.youtube.com/embed/_X6caE4v0fk' frameborder='0'></iframe></body></html>"}}
@@ -32,16 +32,16 @@ class Volcano extends Component
                 />
 
                 <TouchableHighlight style={styles.button} onPress={() => Linking.openURL('https://www.youtube.com/embed/_X6caE4v0fk')}>
-                    <Image style={styles.image} source={require('../../components/open360.png')}/>
+                    <Image style={styles.image} source={require('../open360.png')}/>
                 </TouchableHighlight>
 
                 <View style={styles.containerStyle}>
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('volcanoQuizPage')}>
-                        <Image style={styles.image} source={require('../../components/take_quiz.png')}/>
+                        <Image style={styles.image} source={require('../take_quiz.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => {this.props.navigator.pop()}}>
-                        <Image style={styles.image} source={require('../../components/back.png')}/>
+                        <Image style={styles.image} source={require('../back.png')}/>
                     </TouchableHighlight>
                 </View>
             </View>

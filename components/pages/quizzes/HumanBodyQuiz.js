@@ -4,14 +4,14 @@ import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native'
 var questionNumber = 1;
 var dinoQuizScore = 0;
 
-class AntarcticaQuiz extends Component
+class HumanBodyQuiz extends Component
 {
     constructor()
     {
         super();
         this.state =
             {
-                questionText: 'Antarctica is considered a desert',
+                questionText: 'The smallest bone in the human body is located in the ear.',
                 nextBtnTxt: 'Next Question'
             }
     }
@@ -25,11 +25,11 @@ class AntarcticaQuiz extends Component
         }
         if(questionNumber == 2)
         {
-            this.setState({questionText: 'WRONG: Polar Bears live in the Arctic (the North Pole) so they never see Penguins'})
+            this.setState({questionText: 'WRONG: Humans have 300 bones at birth but this decreases to 206 bones by adulthood after some bones fuse together'})
         }
         if(questionNumber == 3)
         {
-            this.setState({questionText: 'WRONG: 1000s of people live and work at various research facilities in Antarctica'})
+            this.setState({questionText: 'WRONG: The tongue has 8 muscles, so is not the strongest muscle in the body (The strongest is in your jaw and lets you chew)'})
         }
         if(questionNumber == 4)
         {
@@ -42,7 +42,7 @@ class AntarcticaQuiz extends Component
     {
         if(questionNumber == 1)
         {
-            this.setState({questionText: 'WRONG: Because it experiences such little rain, Antarctica is considered a desert'})
+            this.setState({questionText: 'WRONG: The smallest bone in the human body is located in the ear'})
             //return{background: #9adb8c #db8c8c
         }
         if(questionNumber == 2)
@@ -57,16 +57,16 @@ class AntarcticaQuiz extends Component
         }
         if(questionNumber == 4)
         {
-            this.setState({questionText: 'WRONG: Antarctica is bigger than Europe'})
+            this.setState({questionText: 'WRONG: As well as having unique fingerprints, humans also have unique tongue prints'})
         }
     }
 
     updateQuestion = () =>
     {
         questionNumber++;
-        if(questionNumber == 2) {this.setState({questionText: 'Polar Bears and Penguins live together in Antarctica'})}
-        if(questionNumber == 3) {this.setState({questionText: 'No humans live in Antarctica'})}
-        if(questionNumber == 4) {this.setState({questionText: 'Antarctica is bigger than Europe'})}
+        if(questionNumber == 2) {this.setState({questionText: 'The human skeleton is made up of 100 bones'})}
+        if(questionNumber == 3) {this.setState({questionText: 'The tongue is the strongest muscle in the body.'})}
+        if(questionNumber == 4) {this.setState({questionText: 'As well as having unique fingerprints, humans also have unique tongue prints'})}
         if(questionNumber == 5)
         {
             this.setState({questionText: 'Your Score: '+(dinoQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
@@ -75,7 +75,7 @@ class AntarcticaQuiz extends Component
         {
             questionNumber = 1;
             dinoQuizScore = 0;
-            this.setState({questionText: 'Antarctica is considered a desert.', nextBtnTxt: 'Next Question'});
+            this.setState({questionText: 'The smallest bone in the human body is located in the ear', nextBtnTxt: 'Next Question'});
         }
     }
 
@@ -90,19 +90,19 @@ class AntarcticaQuiz extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('../components/true_false.png')}/>
+                <Image style={{width: 360}} source={require('../../true_false.png')}/>
 
                 <View style={styles.question}>
-                    <Image style={styles.image} source={require('../components/true.png')}/>
+                    <Text style={styles.questionText}> {this.state.questionText} </Text>
                 </View>
 
                 <View style={styles.optionsStyle}>
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateTrue}>
-                        <Image style={styles.image} source={require('../components/true.png')}/>
+                        <Image style={styles.image} source={require('../../true.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateFalse}>
-                        <Image style={styles.image} source={require('../components/false.png')}/>
+                        <Image style={styles.image} source={require('../../false.png')}/>
                     </TouchableHighlight>
                 </View>
 
@@ -111,7 +111,7 @@ class AntarcticaQuiz extends Component
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button} onPress={this.resetVariables}>
-                    <Image style={styles.image} source={require('../components/back.png')}/>
+                    <Image style={styles.image} source={require('../../back.png')}/>
                 </TouchableHighlight>
             </View>
         );
@@ -125,7 +125,7 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#1abc9c',
+                backgroundColor: '#f1c40f',
             },
         button:
             {
@@ -155,7 +155,7 @@ const styles = StyleSheet.create(
         nextButton:
             {
                 backgroundColor: '#00ff00',
-                borderColor: '#107561',
+                borderColor: '#d1850e',
                 borderWidth: 3,
                 alignItems: 'center',
                 height: 50,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create(
             },
         textStyle:
             {
-                fontSize: 25,
+                fontSize: 30,
                 color: 'black',
                 textAlign: 'center',
                 fontWeight: 'bold',
@@ -210,7 +210,7 @@ const styles = StyleSheet.create(
             },
         image:
             {
-                borderColor: '#107561',
+                borderColor: '#d1850e',
                 borderWidth: 3,
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
@@ -219,5 +219,4 @@ const styles = StyleSheet.create(
             }
     });
 
-export default AntarcticaQuiz;
-
+export default HumanBodyQuiz;

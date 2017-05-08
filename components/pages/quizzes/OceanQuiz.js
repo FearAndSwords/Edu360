@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 
 var questionNumber = 1;
-var spaceQuizScore = 0;
+var oceanQuizScore = 0;
 
-class SpaceQuiz extends Component
+class OceanQuiz extends Component
 {
     constructor()
     {
         super();
         this.state =
             {
-                questionText: 'Over one million Earths could fit inside the Sun',
+                questionText: 'Around 50% of the Earth\'s surface is covered by oceans',
                 nextBtnTxt: 'Next Question'
             }
     }
@@ -20,21 +20,21 @@ class SpaceQuiz extends Component
     {
         if(questionNumber == 1)
         {
-            this.setState({questionText: 'CORRECT!'});
-            spaceQuizScore++;
+            this.setState({questionText: 'WRONG: Around 70% of the Earth\'s surface is covered by oceans'});
         }
         if(questionNumber == 2)
         {
-            this.setState({questionText: 'WRONG: Jupiter is the biggest planet in our solar system'})
+            this.setState({questionText: 'CORRECT!'});
+            oceanQuizScore++;
         }
         if(questionNumber == 3)
         {
-            this.setState({questionText: 'WRONG: The universe is approximately 13.8 billion years old'})
+            this.setState({questionText: 'CORRECT!'});
+            oceanQuizScore++;
         }
         if(questionNumber == 4)
         {
-            this.setState({questionText: 'CORRECT!'})
-            spaceQuizScore++;
+            this.setState({questionText: 'WRONG: There are 5 oceans covering the surface of our globe (Pacific, Atlantic, Indian, Arctic & Southern)'})
         }
     }
 
@@ -42,47 +42,47 @@ class SpaceQuiz extends Component
     {
         if(questionNumber == 1)
         {
-            this.setState({questionText: 'WRONG: Over one million Earths could fit inside the Sun'})
+            this.setState({questionText: 'CORRECT!'});
+            oceanQuizScore++;
             //return{background: #9adb8c #db8c8c
         }
         if(questionNumber == 2)
         {
-            this.setState({questionText: 'CORRECT!'})
-            spaceQuizScore++;
+            this.setState({questionText: 'WRONG: The largest ocean on Earth is the Pacific Ocean'})
         }
         if(questionNumber == 3)
         {
-            this.setState({questionText: 'CORRECT!'})
-            spaceQuizScore++;
+            this.setState({questionText: 'WRONG: We have only explored about 5% of the Earth\'s oceans'})
         }
         if(questionNumber == 4)
         {
-            this.setState({questionText: 'WRONG: The first person to set foot on the Moon was Neil Armstrong'})
+            this.setState({questionText: 'CORRECT!'});
+            oceanQuizScore++;
         }
     }
 
     updateQuestion = () =>
     {
         questionNumber++;
-        if(questionNumber == 2) {this.setState({questionText: 'Mars is the biggest planet in our solar system'})}
-        if(questionNumber == 3) {this.setState({questionText: 'The universe is approximately 1 billion years old'})}
-        if(questionNumber == 4) {this.setState({questionText: 'The first person to set foot on the Moon was Neil Armstrong'})}
+        if(questionNumber == 2) {this.setState({questionText: 'The largest ocean on Earth is the Pacific Ocean'})}
+        if(questionNumber == 3) {this.setState({questionText: 'We have only explored about 5% of the Earth\'s oceans'})}
+        if(questionNumber == 4) {this.setState({questionText: 'There are 4 oceans covering the surface of our globe'})}
         if(questionNumber == 5)
         {
-            this.setState({questionText: 'Your Score: '+(spaceQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
+            this.setState({questionText: 'Your Score: '+(oceanQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
         }
         if(questionNumber > 5)
         {
             questionNumber = 1;
-            spaceQuizScore = 0;
-            this.setState({questionText: 'Over one million Earths could fit inside the Sun', nextBtnTxt: 'Next Question'});
+            oceanQuizScore = 0;
+            this.setState({questionText: 'Around 50% of the Earth\'s surface is covered by oceans', nextBtnTxt: 'Next Question'});
         }
     }
 
     resetVariables = () =>
     {
         questionNumber = 1;
-        spaceQuizScore = 0;
+        oceanQuizScore = 0;
         this.props.navigator.pop();
     }
 
@@ -90,7 +90,7 @@ class SpaceQuiz extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('../components/true_false.png')}/>
+                <Image style={{width: 360}} source={require('../../true_false.png')}/>
 
                 <View style={styles.question}>
                     <Text style={styles.questionText}> {this.state.questionText} </Text>
@@ -98,11 +98,11 @@ class SpaceQuiz extends Component
 
                 <View style={styles.optionsStyle}>
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateTrue}>
-                        <Image style={styles.image} source={require('../components/true.png')}/>
+                        <Image style={styles.image} source={require('../../true.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateFalse}>
-                        <Image style={styles.image} source={require('../components/false.png')}/>
+                        <Image style={styles.image} source={require('../../false.png')}/>
                     </TouchableHighlight>
                 </View>
 
@@ -111,7 +111,7 @@ class SpaceQuiz extends Component
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button} onPress={this.resetVariables}>
-                    <Image style={styles.image} source={require('../components/back.png')}/>
+                    <Image style={styles.image} source={require('../../back.png')}/>
                 </TouchableHighlight>
             </View>
         );
@@ -125,7 +125,7 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#9b59b6',
+                backgroundColor: '#3498db',
             },
         button:
             {
@@ -143,7 +143,7 @@ const styles = StyleSheet.create(
         nextButton:
             {
                 backgroundColor: '#00ff00',
-                borderColor: '#6c3384',
+                borderColor: '#1d5a82',
                 borderWidth: 3,
                 alignItems: 'center',
                 height: 50,
@@ -170,7 +170,7 @@ const styles = StyleSheet.create(
             },
         textStyle:
             {
-                fontSize: 25,
+                fontSize: 30,
                 color: 'black',
                 textAlign: 'center',
                 fontWeight: 'bold',
@@ -210,7 +210,7 @@ const styles = StyleSheet.create(
             },
         image:
             {
-                borderColor: '#6c3384',
+                borderColor: '#1d5a82',
                 borderWidth: 3,
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
@@ -219,4 +219,4 @@ const styles = StyleSheet.create(
             }
     });
 
-export default SpaceQuiz;
+export default OceanQuiz;

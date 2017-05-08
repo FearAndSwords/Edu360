@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { AppRegistry, Navigator } from 'react-native';
-import Home from './components/Home';
-import Dino from './components/Dino';
-import Space from './src/pages/Space'
-import Options from './components/Options';
-import Login from './components/Login';
-import Ocean from './components/Ocean'
-import Profile from './components/Profile'
-import Settings from './components/Settings';
-import DinoQuiz from "./components/DinoQuiz";
-import SpaceQuiz from "./components/SpaceQuiz";
-import OceanQuiz from "./components/OceanQuiz";
-import HumanBody from "./components/HumanBody";
-import Volcano from "./src/pages/Volcano";
-import Antarctica from "./components/Antarctica";
-import HumanBodyQuiz from "./components/HumanBodyQuiz";
-import VolcanoQuiz from "./components/VolcanoQuiz";
-import AntarcticaQuiz from "./components/AntarcticaQuiz";
+import Home from './components/pages/Home';
+import Dino from './components/pages/Dino';
+import Space from './components/pages/Space'
+import Options from './components/pages/Options';
+import Login from './components/pages/Login';
+import Ocean from './components/pages/Ocean'
+import Profile from './components/pages/Profile'
+import Settings from './components/pages/Settings';
+import DinoQuiz from "./components/pages/quizzes/DinoQuiz";
+import SpaceQuiz from "./components/pages/quizzes/SpaceQuiz";
+import OceanQuiz from "./components/pages/quizzes/OceanQuiz";
+import HumanBody from "./components/pages/HumanBody";
+import Volcano from "./components/pages/Volcano";
+import Antarctica from "./components/pages/Antarctica";
+import HumanBodyQuiz from "./components/pages/quizzes/HumanBodyQuiz";
+import VolcanoQuiz from "./components/pages/quizzes/VolcanoQuiz";
+import AntarcticaQuiz from "./components/pages/quizzes/AntarcticaQuiz";
 
 export default class Edu360 extends Component
 {
@@ -83,7 +83,7 @@ export default class Edu360 extends Component
     render()
     {
         return (
-            <Navigator initialRoute={{name: 'homePage'}} // Need to check for login -> if logged in go to homePage instead
+            <Navigator initialRoute={{name: 'homePage'}} // Start on Login page
                        renderScene={this.renderScene}
             />
         );

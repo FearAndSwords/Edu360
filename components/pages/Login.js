@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity, KeyboardAvoidingView, TextInput } from 'react-native';
 
 import firebase from 'firebase';
-import Spinner from '../components/Spinner';
-import Splash from '../components/Splash';
+import Spinner from '../Spinner';
+import Splash from '../Splash';
 
 class Login extends Component
 {
@@ -104,7 +104,7 @@ class Login extends Component
                     <View style={styles.logoContainer}>
                         <Image
                         style={styles.logo}
-                        source={require('../components/edu360Logo.png')}
+                        source={require('../edu360Logo.png')}
                         resizeMode="cover"
                         />
 

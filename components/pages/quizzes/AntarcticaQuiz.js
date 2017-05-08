@@ -1,96 +1,104 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 
+// Initialise question number and score
 var questionNumber = 1;
-var oceanQuizScore = 0;
+var dinoQuizScore = 0;
 
-class OceanQuiz extends Component
+class AntarcticaQuiz extends Component
 {
     constructor()
     {
         super();
+        // Set the initial state of the question and the text on the next button
         this.state =
             {
-                questionText: 'Around 50% of the Earth\'s surface is covered by oceans',
+                questionText: 'Antarctica is considered a desert',
                 nextBtnTxt: 'Next Question'
             }
     }
 
+    // True answer function
     updateTrue = () =>
     {
-        if(questionNumber == 1)
+        if(questionNumber == 1) // If we are on the first question
         {
-            this.setState({questionText: 'WRONG: Around 70% of the Earth\'s surface is covered by oceans'});
+            this.setState({questionText: 'CORRECT!'}); // The answer is correct
+            dinoQuizScore++; // Increase the score
         }
-        if(questionNumber == 2)
+        if(questionNumber == 2) // If we are on the second question
         {
-            this.setState({questionText: 'CORRECT!'});
-            oceanQuizScore++;
+            this.setState({questionText: 'WRONG: Polar Bears live in the Arctic (the North Pole) so they never see Penguins'}) // The answer is wrong
         }
         if(questionNumber == 3)
         {
-            this.setState({questionText: 'CORRECT!'});
-            oceanQuizScore++;
+            this.setState({questionText: 'WRONG: 1000s of people live and work at various research facilities in Antarctica'})
         }
         if(questionNumber == 4)
         {
-            this.setState({questionText: 'WRONG: There are 5 oceans covering the surface of our globe (Pacific, Atlantic, Indian, Arctic & Southern)'})
+            this.setState({questionText: 'CORRECT!'});
+            dinoQuizScore++;
         }
     }
 
+    // False answer function
     updateFalse = () =>
     {
         if(questionNumber == 1)
         {
-            this.setState({questionText: 'CORRECT!'});
-            oceanQuizScore++;
+            this.setState({questionText: 'WRONG: Because it experiences such little rain, Antarctica is considered a desert'})
             //return{background: #9adb8c #db8c8c
         }
         if(questionNumber == 2)
         {
-            this.setState({questionText: 'WRONG: The largest ocean on Earth is the Pacific Ocean'})
+            this.setState({questionText: 'CORRECT!'});
+            dinoQuizScore++;
         }
         if(questionNumber == 3)
         {
-            this.setState({questionText: 'WRONG: We have only explored about 5% of the Earth\'s oceans'})
+            this.setState({questionText: 'CORRECT!'});
+            dinoQuizScore++;
         }
         if(questionNumber == 4)
         {
-            this.setState({questionText: 'CORRECT!'});
-            oceanQuizScore++;
+            this.setState({questionText: 'WRONG: Antarctica is bigger than Europe'})
         }
     }
 
+    // Update the question function
     updateQuestion = () =>
     {
-        questionNumber++;
-        if(questionNumber == 2) {this.setState({questionText: 'The largest ocean on Earth is the Pacific Ocean'})}
-        if(questionNumber == 3) {this.setState({questionText: 'We have only explored about 5% of the Earth\'s oceans'})}
-        if(questionNumber == 4) {this.setState({questionText: 'There are 4 oceans covering the surface of our globe'})}
-        if(questionNumber == 5)
+        questionNumber++; // Go to next question
+        if(questionNumber == 2) {this.setState({questionText: 'Polar Bears and Penguins live together in Antarctica'})} // Set the question text
+        if(questionNumber == 3) {this.setState({questionText: 'No humans live in Antarctica'})}
+        if(questionNumber == 4) {this.setState({questionText: 'Antarctica is bigger than Europe'})}
+        if(questionNumber == 5) // If you have answered all questions
         {
-            this.setState({questionText: 'Your Score: '+(oceanQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'});
-        }
-        if(questionNumber > 5)
+            this.setState({questionText: 'Your Score: '+(dinoQuizScore/4*100)+"%", nextBtnTxt: 'Retry?'}); // Calculate and display score,
+        }                                                                                                  // and change next button text
+        if(questionNumber > 5) // If you press "Retry?"
         {
+            // Reset question number and score, set question text and text on next button
             questionNumber = 1;
-            oceanQuizScore = 0;
-            this.setState({questionText: 'Around 50% of the Earth\'s surface is covered by oceans', nextBtnTxt: 'Next Question'});
+            dinoQuizScore = 0;
+            this.setState({questionText: 'Antarctica is considered a desert.', nextBtnTxt: 'Next Question'});
         }
     }
 
+    // Back function -> resets question number and score then navigate back
     resetVariables = () =>
     {
         questionNumber = 1;
-        oceanQuizScore = 0;
+        dinoQuizScore = 0;
         this.props.navigator.pop();
     }
 
+    // Display for page
     render()
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('../components/true_false.png')}/>
+                <Image style={{width: 360}} source={require('../../true_false.png')}/>
 
                 <View style={styles.question}>
                     <Text style={styles.questionText}> {this.state.questionText} </Text>
@@ -98,11 +106,11 @@ class OceanQuiz extends Component
 
                 <View style={styles.optionsStyle}>
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateTrue}>
-                        <Image style={styles.image} source={require('../components/true.png')}/>
+                        <Image style={styles.image} source={require('../../true.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.optButton} onPress = {this.updateFalse}>
-                        <Image style={styles.image} source={require('../components/false.png')}/>
+                        <Image style={styles.image} source={require('../../false.png')}/>
                     </TouchableHighlight>
                 </View>
 
@@ -111,13 +119,14 @@ class OceanQuiz extends Component
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button} onPress={this.resetVariables}>
-                    <Image style={styles.image} source={require('../components/back.png')}/>
+                    <Image style={styles.image} source={require('../../back.png')}/>
                 </TouchableHighlight>
             </View>
         );
     }
 }
 
+// Styling for page
 const styles = StyleSheet.create(
     {
         container:
@@ -125,26 +134,10 @@ const styles = StyleSheet.create(
                 flex: 1,
                 justifyContent: 'flex-start',
                 alignItems: 'center',
-                backgroundColor: '#3498db',
+                backgroundColor: '#1abc9c',
             },
         button:
             {
-                alignItems: 'center',
-                height: 50,
-                width: 350,
-                shadowColor: '#000',
-                shadowOffset: {width: 0, height: 3},
-                shadowOpacity: 0.5,
-                elevation: 2,
-                marginBottom: 10,
-                marginRight: 10,
-                marginLeft: 10
-            },
-        nextButton:
-            {
-                backgroundColor: '#00ff00',
-                borderColor: '#1d5a82',
-                borderWidth: 3,
                 alignItems: 'center',
                 height: 50,
                 width: 350,
@@ -168,6 +161,22 @@ const styles = StyleSheet.create(
                 position: 'relative',
                 marginTop: 10
             },
+        nextButton:
+            {
+                backgroundColor: '#00ff00',
+                borderColor: '#107561',
+                borderWidth: 3,
+                alignItems: 'center',
+                height: 50,
+                width: 350,
+                shadowColor: '#000',
+                shadowOffset: {width: 0, height: 3},
+                shadowOpacity: 0.5,
+                elevation: 2,
+                marginBottom: 10,
+                marginRight: 10,
+                marginLeft: 10
+            },
         textStyle:
             {
                 fontSize: 25,
@@ -177,7 +186,7 @@ const styles = StyleSheet.create(
             },
         questionText:
             {
-                fontSize: 25,
+                fontSize: 30,
                 color: '#000000',
                 textAlign: 'center',
                 fontFamily: 'monospace',
@@ -210,7 +219,7 @@ const styles = StyleSheet.create(
             },
         image:
             {
-                borderColor: '#1d5a82',
+                borderColor: '#107561',
                 borderWidth: 3,
                 shadowColor: '#000000',
                 shadowOffset: {width: 0, height: 3},
@@ -219,4 +228,5 @@ const styles = StyleSheet.create(
             }
     });
 
-export default OceanQuiz;
+export default AntarcticaQuiz;
+

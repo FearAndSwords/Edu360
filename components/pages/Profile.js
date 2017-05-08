@@ -7,11 +7,11 @@ class Profile extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={{width: 360}} source={require('../components/profile_page.png')}/>
+                <Image style={{width: 360}} source={require('../profile_page.png')}/>
 
                 <Image
                     style={styles.image}
-                    source={require('../components/purpleDino.jpg')}
+                    source={require('../purpleDino.jpg')}
                 />
 
                 <Text style={{fontSize: 35, color: '#25102d'}}> Level 1 </Text>
@@ -38,7 +38,7 @@ class Profile extends Component
                 </View>
 
                 <TouchableHighlight style={styles.button} onPress={() => this.props.navigator.pop()}>
-                    <Image style={styles.backButtonImage} source={require('../components/back.png')}/>
+                    <Image style={styles.backButtonImage} source={require('../back.png')}/>
                 </TouchableHighlight>
             </View>
         );

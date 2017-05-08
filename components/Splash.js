@@ -50,8 +50,8 @@ class Splash extends Component
         );
     }
 }
-//create a styles object and use it to style the splash screen
 
+//create a styles object and use it to style the splash screen
 const styles = StyleSheet.create(
 {
     wrapper:
@@ -82,13 +82,13 @@ const styles = StyleSheet.create(
         flex: 1
     },
     logo:
-        {
-            alignSelf: 'center',
-            height: 150,
-            width: 320,
-            borderWidth: 1,
-            borderRadius: 15
-        }
+    {
+        alignSelf: 'center',
+        height: 150,
+        width: 320,
+        borderWidth: 1,
+        borderRadius: 15
+    }
 });
 
 export default Splash;

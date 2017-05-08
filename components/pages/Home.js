@@ -9,6 +9,7 @@ class Home extends Component
         this.navigate = this.navigate.bind(this)
     }
 
+    // Method for implementing Navigator
     navigate(name)
     {
         this.props.navigator.push(
@@ -22,41 +23,35 @@ class Home extends Component
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    {/*<TouchableHighlight style={{}}>*/}
-                        {/*<Text>Touchable</Text>*/}
-                    {/*</TouchableHighlight>*/}
-
-                    {/*<Text>Test</Text>*/}
-
-                    <Image style={styles.header} source={require('../components/home_page.png')}/>
+                    <Image style={styles.header} source={require('../home_page.png')}/>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('dinoPage')}>
-                        <Image style={styles.image} source={require('../components/dinosaur_btn.png')}/>
+                        <Image style={styles.image} source={require('../dinosaur_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('spacePage')}>
-                        <Image style={styles.image} source={require('../components/space_btn.png')}/>
+                        <Image style={styles.image} source={require('../space_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('oceanPage')}>
-                        <Image style={styles.image} source={require('../components/ocean_btn.png')}/>
+                        <Image style={styles.image} source={require('../ocean_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('bodyPage')}>
-                        <Image style={styles.image} source={require('../components/human_btn.png')}/>
+                        <Image style={styles.image} source={require('../human_btn.png')}/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('volcanoPage')}>
-                        <Image style={styles.image} source={require('../components/vol1.png')} resizeMode="stretch"/>
+                        <Image style={styles.image} source={require('../vol1.png')} resizeMode="stretch"/>
                     </TouchableHighlight>
 
                     <TouchableHighlight style={styles.button} onPress={() => this.navigate('antarcticaPage')}>
-                        <Image style={styles.image} source={require('../components/ant1.png')} resizeMode="stretch"/>
+                        <Image style={styles.image} source={require('../ant1.png')} resizeMode="stretch"/>
                     </TouchableHighlight>
                 </ScrollView>
 
                 <TouchableHighlight style={styles.optButton} onPress={() => this.navigate('optionsPage')}>
-                    <Image style={styles.optButtonImg} source={require('../components/options.png')} resizeMode="stretch"/>
+                    <Image style={styles.optButtonImg} source={require('../options.png')} resizeMode="stretch"/>
                 </TouchableHighlight>
             </View>
         );
@@ -135,8 +130,6 @@ const styles = StyleSheet.create(
     header:
         {
             width: 360,
-            // borderColor: '#a34000',
-            // borderWidth: 3,
             shadowColor: '#000000',
             shadowOffset: {width: 0, height: 3},
             shadowOpacity: 1,

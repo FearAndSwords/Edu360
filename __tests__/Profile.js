@@ -1,6 +1,6 @@
 import 'react-native';
 import React from 'react';
-import Profile from '../components/Profile';
+import Profile from '../components/pages/Profile';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';

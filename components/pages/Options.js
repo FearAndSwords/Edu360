@@ -28,23 +28,23 @@ class Options extends Component
     {
         return (
             <View style={styles.container}>
-                <Image style={styles.header} source={require('../components/options.png')}/>
+                <Image style={styles.header} source={require('../options.png')}/>
 
                 <TouchableHighlight style={styles.button} onPress={() => this.navigate('profilePage')}>
-                    <Image style={styles.image} source={require('../components/profile.png')} resizeMode="stretch"/>
+                    <Image style={styles.image} source={require('../profile.png')} resizeMode="stretch"/>
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button} onPress={() => this.navigate('settingsPage')}>
-                    <Image style={styles.image} source={require('../components/setting.png')} resizeMode="stretch"/>
+                    <Image style={styles.image} source={require('../setting.png')} resizeMode="stretch"/>
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.button}
                                     onPress={() => this.logOut()}>
-                    <Image style={styles.image} source={require('../components/log_out.png')} resizeMode="stretch"/>
+                    <Image style={styles.image} source={require('../log_out.png')} resizeMode="stretch"/>
                 </TouchableHighlight>
 
                 <TouchableHighlight style={styles.backButton} onPress={() => this.props.navigator.pop()}>
-                    <Image style={styles.backButtonImage} source={require('../components/back.png')}/>
+                    <Image style={styles.backButtonImage} source={require('../back.png')}/>
                 </TouchableHighlight>
             </View>
         );
