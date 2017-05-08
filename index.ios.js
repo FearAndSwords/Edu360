@@ -31,7 +31,7 @@ export default class Edu360 extends Component
         if (route.name === 'loginPage') {
             return <Login navigator={navigator}/>
         }
-        if (route.name === 'homePage') {
+        else if (route.name === 'homePage') {
             return <Home navigator={navigator}/>
         }
         else if (route.name === 'dinoPage') {
