@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Image, View, TouchableHighlight } from 'react-native';
-import Header from './Header';
 import firebase from 'firebase';
 
 class Options extends Component

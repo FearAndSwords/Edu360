@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight, ScrollView, Image } from 'react-native';
-import Header from './Header';
+import { StyleSheet, View, TouchableHighlight, ScrollView, Image } from 'react-native';
 
 class Home extends Component
 {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
-import Header from './Header';
 
 var questionNumber = 1;
 var spaceQuizScore = 0;

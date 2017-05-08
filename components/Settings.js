@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
-import Header from './Header';
 
 class Settings extends Component
 {

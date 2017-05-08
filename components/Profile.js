@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
-import Header from './Header';
 
 class Profile extends Component
 {
